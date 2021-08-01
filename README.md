@@ -1,2 +1,2 @@
-# LFP_Practica1_202000119
-FIUSAC - LFP - Practica 1 - 202000119
+#   Nombre: Sergie Daniel Arizandieta Yol
+##  Carnet: 202000119
