@@ -1,3 +1,5 @@
+from gestion import *
+
 global lista
 lista = list()
 
@@ -26,6 +28,10 @@ def listar(cantDatos,cantPara):
     for x in range(0,cantDatos):
         print ("Nombre:", a.Registros[x][0],"Nota:",a.Registros[x][1])
    
+    print("\nGestion")
     for x in range(0,cantPara):
-        print ("Parametro",x,":",a.Parametros[x])
+        #print ("Parametro",x,":",a.Parametros[x])
+        gestionG(a.Parametros[x],lista,cantDatos)
+    
+
 

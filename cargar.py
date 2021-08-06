@@ -1,5 +1,5 @@
 from tkinter import filedialog, Tk
-from Cursos import *
+from cursos import *
 
 #Intefaz para abrir el archivo 
 def open():
