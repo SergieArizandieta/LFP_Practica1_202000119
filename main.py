@@ -1,5 +1,6 @@
 from cargar import *
 
+#Menu desplegado
 def menu():
     print('1.Cargar archivo\n2.Mostrar reporte en consola\n3.Exportar reporte\n4.Salir')
 
