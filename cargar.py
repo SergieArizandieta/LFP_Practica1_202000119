@@ -1,5 +1,6 @@
-  
 from tkinter import filedialog, Tk
+from typing import List
+from Cursos import *
 
 listaT = []
 
@@ -21,6 +22,37 @@ def open():
         archivo.close()
         print('Lectura exitosa\n')
         return texto
+
+def purificacion():
+    text = open()
+    lista = []
+    if text is not None:
+        Chars = '={<">}, ' 
+        CharAux = '={<">} ' 
+        for x in range(len(text)):
+            if (len(text)-1) != x:
+                for specialChar in Chars:
+                    text[x] = text[x].replace(specialChar, '').strip()
+                text[x] = text[x].replace(";", ',').strip()
+            else:
+                for specialChar in CharAux:
+                    text[x] = text[x].replace(specialChar, '').strip()   
+        for txt in text:
+            print(txt)
+        for x in range(1,len(text)-1):
+            temp = text[x].split(',') 
+            lista.append(temp)
+
+        
+        parametros = text[len(text)-1].split(',') 
+       
+        print("\n",parametros)   
+        print("\n",lista)  
+        print("\n",text)
+        registro(text[0],lista,parametros)
+
+    else:
+        print('No se pudo analizar la entrada\n')
 
 
 def abrir():
@@ -47,10 +79,8 @@ def Carga():
     if txt is not None:
         print(txt)
     else:
-        print('Error lectura')
+        print('Error lectura')    
 
-        
-    
 def Carga1():
     txt = open()
     if txt is not None:
@@ -69,9 +99,6 @@ def Carga1():
 
     else:
         print('No se pudo analizar la entrada\n')
-
-
-
 
 def Carga2():
     txt = abrir()

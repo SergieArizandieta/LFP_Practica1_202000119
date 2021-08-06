@@ -9,7 +9,7 @@ option = int(input("Ingrese una opcion: "))
 while option !=0:
     if option == 1:
         print("Opcion 1")
-        Carga1()
+        purificacion()
     elif option == 2:
         print("Opcion 2")
     elif option == 3:
