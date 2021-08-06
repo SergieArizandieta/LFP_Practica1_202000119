@@ -1,0 +1,8 @@
+NOMBRE_DEL_CURSO = {
+    < "Estudiante 01" ; 65>,
+    < "Estudiante 02" ; 89>,
+    < "Estudiante 03" ; 36>,
+    < "Estudiante 04" ; 65>,
+    < "Estudiante 05" ; 99>,
+    < "Estudiante 05" ; 71>,
+} PARAMETRO
