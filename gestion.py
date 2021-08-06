@@ -1,29 +1,29 @@
 from typing import ItemsView, List
 from cursos import *
-
+#Gestion general
 def gestionG(Parametro,Lista,cantDatos):
 
     Parametro = Parametro.lower()
     if Parametro.__eq__('asc'):
-        print("\nasc")
+        print("\nASC")
         asc(Lista,cantDatos)
     elif Parametro.__eq__('desc'):
-        print("\ndesc")
+        print("\nDESC")
         desc(Lista,cantDatos)
     elif Parametro.__eq__('avg'):
-        print("\navg")
+        print("\nAVG")
         avg(Lista,cantDatos)
     elif Parametro.__eq__('min'):
-        print("\nmin")
+        print("\nMIN")
         min(Lista,cantDatos)
     elif Parametro.__eq__('max'):
-        print("\nmax")
+        print("\nMAX")
         max(Lista,cantDatos)
     elif Parametro.__eq__('apr'):
-        print("\napr")
+        print("\nAprobado")
         estudiantes(Lista,cantDatos,'apr')
     elif Parametro.__eq__('rep'):
-        print("\nrep")
+        print("\nReprobado")
         estudiantes(Lista,cantDatos,'rep')
       
     else:
@@ -36,9 +36,9 @@ def asc(Lista,cantDatos):
     for a in Lista:
        asc = a.Registros
     
-    for x in range(0,cantDatos):
-        print ("Nombre:", asc[x][0],"Nota:",asc[x][1])
-    print(cantDatos,"Camtidad de datos")
+    #for x in range(0,cantDatos):
+        #print ("Nombre:", asc[x][0],"Nota:",asc[x][1])
+  
     band = False
     while band == False:
         band = True
@@ -62,9 +62,9 @@ def desc(Lista,cantDatos):
     for a in Lista:
        desc = a.Registros
     
-    for x in range(0,cantDatos):
-        print ("Nombre:", desc[x][0],"Nota:",desc[x][1])
-    print(cantDatos,"Camtidad de datos")
+    #for x in range(0,cantDatos):
+        #print ("Nombre:", desc[x][0],"Nota:",desc[x][1])
+
     band = False
     while band == False:
         band = True
@@ -147,7 +147,7 @@ def estudiantes(Lista,cantDatos,tipo):
                 band = False
 
     if tipo.__eq__('apr'):
-        print("Ganaron:")
+   
         for x in range(0,cantDatos):
             if float(list[x][1])>60:
                 ganaron.append(list[x])
@@ -158,7 +158,7 @@ def estudiantes(Lista,cantDatos,tipo):
        
    
     if tipo.__eq__('rep'):        
-        print("Perdieron:")
+    
         for x in range(0,cantDatos):
             if float(list[x][1])<60:
                 perdieron.append(list[x])
@@ -167,6 +167,5 @@ def estudiantes(Lista,cantDatos,tipo):
         for x in range(0,cantPerdieron):
              print("Nombre:", perdieron[x][0],"Nota:",perdieron[x][1]) 
   
-    
 
        

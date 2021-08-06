@@ -22,11 +22,15 @@ def open():
         return texto
 
 #Purificacion de los datos
+Titles = ''
+Lista = []
+Parameters = []
+
 def purificacion():
     text = open()
     lista = []
     if text is not None:
-        Chars = '={<">}, ' 
+        Chars = '={<">},' 
         CharAux = '={<">} ' 
         for x in range(len(text)):
             if (len(text)-1) != x:
@@ -36,8 +40,7 @@ def purificacion():
             else:
                 for specialChar in CharAux:
                     text[x] = text[x].replace(specialChar, '').strip()   
-        for txt in text:
-            print(txt)
+      
         for x in range(1,len(text)-1):
             temp = text[x].split(',') 
             lista.append(temp)
@@ -45,16 +48,22 @@ def purificacion():
         
         parametros = text[len(text)-1].split(',') 
        
-        print("\n",parametros)   
-        print("\n",lista)  
-        print("\n",text)
-        registro(text[0],lista,parametros)
-
+        #print("\n",parametros)   
+        #print("\n",lista)  
+        #print("\n",text)
+        global Titles
+        Titles = text[0]
+        global Lista
+        Lista = lista
+        global Parameters
+        Parameters = parametros
+       
+        
     else:
         print('No se pudo analizar la entrada\n')
 
 
 
-
-
+def Exportconsole():
+        registro(Titles,Lista,Parameters)
 

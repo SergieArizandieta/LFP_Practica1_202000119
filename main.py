@@ -13,8 +13,10 @@ while option !=0:
         purificacion()
     elif option == 2:
         print("Opcion 2")
+        Exportconsole()
     elif option == 3:
         print("Opcion 3")
+       
     elif option == 4:
         print("Opcion 4")
         exit()

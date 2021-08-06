@@ -21,7 +21,7 @@ def registro(title,Lista,Parametros):
 #Mostrar los datos en consola
 def listar(cantDatos,cantPara):
     for a in lista:
-        print ("\nRegistros Finales\n",a.titulo, "-",a.Registros, "-", a.Parametros)
+        print ("\nRegistros Finales")
 
     print ("\nCurso:", a.titulo)
 
@@ -30,8 +30,5 @@ def listar(cantDatos,cantPara):
    
     print("\nGestion")
     for x in range(0,cantPara):
-        #print ("Parametro",x,":",a.Parametros[x])
         gestionG(a.Parametros[x],lista,cantDatos)
     
-
-
