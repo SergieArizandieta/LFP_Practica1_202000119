@@ -24,11 +24,8 @@ def open():
 #Purificacion de los datos
 def purificacion():
     lista=[]
-     
     text = open()
-    
     parametros= []
-    
     if text is not None:
         Chars = '={<">},' 
         CharAux = '={<">} ' 

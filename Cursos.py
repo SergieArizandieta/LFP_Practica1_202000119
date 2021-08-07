@@ -25,13 +25,14 @@ def registro(title,Lista,Parametros,text):
 #Mostrar los datos en consola
 def listar(cantDatos,cantPara):
     for a in lista:
-        print ("\nRegistros Finales")
+         print ("--------Bienvenido--------")
 
-    print ("\nCurso:", a.titulo)
+   
 
-    for x in range(0,cantDatos):
-        print ("Nombre:", a.Registros[x][0],"Nota:",a.Registros[x][1])
+    #for x in range(0,cantDatos):
+        #print ("Nombre:", a.Registros[x][0],"Nota:",a.Registros[x][1])
    
     for x in range(0,cantPara):
         gestionG(a.Parametros[x],lista,cantDatos)
     
+    ReporteG(lista,cantDatos)
