@@ -10,7 +10,11 @@ class Curso:
     Parametros = [] 
    
 #Registrar los datos al objeto
-def registro(title,Lista,Parametros):
+def registro(title,Lista,Parametros,text):
+    if lista:
+        del lista[:]
+  
+ 
     curso = Curso()
     curso.titulo = title
     curso.Registros = Lista
@@ -28,7 +32,6 @@ def listar(cantDatos,cantPara):
     for x in range(0,cantDatos):
         print ("Nombre:", a.Registros[x][0],"Nota:",a.Registros[x][1])
    
-    print("\nGestion")
     for x in range(0,cantPara):
         gestionG(a.Parametros[x],lista,cantDatos)
     

@@ -1,29 +1,32 @@
 from typing import ItemsView, List
 from cursos import *
+from reportes import *
+
+#Variables Globales
+Rdesc =""
+Ravg =""
+Rmin =""
+Rmax =""
+Rapr =""
+Rrep =""
+
 #Gestion general
 def gestionG(Parametro,Lista,cantDatos):
 
     Parametro = Parametro.lower()
     if Parametro.__eq__('asc'):
-        print("\nASC")
         asc(Lista,cantDatos)
     elif Parametro.__eq__('desc'):
-        print("\nDESC")
         desc(Lista,cantDatos)
     elif Parametro.__eq__('avg'):
-        print("\nAVG")
         avg(Lista,cantDatos)
     elif Parametro.__eq__('min'):
-        print("\nMIN")
         min(Lista,cantDatos)
     elif Parametro.__eq__('max'):
-        print("\nMAX")
         max(Lista,cantDatos)
     elif Parametro.__eq__('apr'):
-        print("\nAprobado")
         estudiantes(Lista,cantDatos,'apr')
     elif Parametro.__eq__('rep'):
-        print("\nReprobado")
         estudiantes(Lista,cantDatos,'rep')
       
     else:
@@ -43,7 +46,9 @@ def asc(Lista,cantDatos):
     while band == False:
         band = True
         for i in range(cantDatos-1):
-            if asc[i][1] > asc[i+1][1]:
+           
+            if float(asc[i][1]) > float(asc[i+1][1]):
+             
                 auxNum=asc[i][1]
                 asc[i][1] = asc[i+1][1]
                 asc[i+1][1] = auxNum
@@ -52,10 +57,9 @@ def asc(Lista,cantDatos):
                 asc[i][0] = asc[i+1][0]
                 asc[i+1][0] = auxNombre
                 band = False
-
-    for x in range(0,cantDatos):
-        print ("Nombre:", asc[x][0],"Nota:",asc[x][1])
-    
+   
+    Reportasc(asc,cantDatos)
+      
 #Ordena los daros Descendentemente
 def desc(Lista,cantDatos):
     desc = []
@@ -69,7 +73,7 @@ def desc(Lista,cantDatos):
     while band == False:
         band = True
         for i in range(cantDatos-1):
-            if desc[i][1] < desc[i+1][1]:
+            if float(desc[i][1]) < float((desc[i+1][1])):
                 auxNum=desc[i][1]
                 desc[i][1] = desc[i+1][1]
                 desc[i+1][1] = auxNum
@@ -78,9 +82,7 @@ def desc(Lista,cantDatos):
                 desc[i][0] = desc[i+1][0]
                 desc[i+1][0] = auxNombre
                 band = False
-
-    for x in range(0,cantDatos):
-        print ("Nombre:", desc[x][0],"Nota:",desc[x][1])
+    Reportdesc(desc,cantDatos)
 
 #Promedio de los datos
 def avg(Lista,cantDatos):
@@ -92,9 +94,8 @@ def avg(Lista,cantDatos):
     for x in range(0,cantDatos):
         avg = avg + float(list[x][1])
     avg = avg/ cantDatos
+    Reportavg(avg)
   
-    print('El promedio es de: ',avg)
-
 #Mayor nota
 def max(Lista,cantDatos):
     max = float(0)
@@ -106,12 +107,11 @@ def max(Lista,cantDatos):
         if float(list[x][1]) > max:
             max = float(list[x][1])
             nombre = list[x][0]
-
-    print("La nota mas alta es",max,"De: ",nombre)
+    Reportmax(max,nombre)
        
 #Menor nota
 def min(Lista,cantDatos):
-    min = float(100)
+    min = float(10000)
     list = []
     nombre = ""
     for a in Lista:
@@ -120,7 +120,7 @@ def min(Lista,cantDatos):
         if float(list[x][1]) < min:
             min = float(list[x][1])
             nombre = list[x][0]
-    print("La nota mas baja es",min,"De: ",nombre)
+    Reportmin(min,nombre)
 
 #Estudiantes aprobados y desaprobados
 def estudiantes(Lista,cantDatos,tipo):
@@ -152,9 +152,8 @@ def estudiantes(Lista,cantDatos,tipo):
             if float(list[x][1])>60:
                 ganaron.append(list[x])
                 cantGanaron +=  1
-
-        for x in range(0,cantGanaron):
-             print("Nombre:", ganaron[x][0],"Nota:",ganaron[x][1])         
+        Reporapr(ganaron,cantGanaron)
+        
        
    
     if tipo.__eq__('rep'):        
@@ -163,9 +162,7 @@ def estudiantes(Lista,cantDatos,tipo):
             if float(list[x][1])<60:
                 perdieron.append(list[x])
                 cantPerdieron +=  1
+        Reporrep(perdieron,cantPerdieron)
         
-        for x in range(0,cantPerdieron):
-             print("Nombre:", perdieron[x][0],"Nota:",perdieron[x][1]) 
-  
 
        

@@ -13,22 +13,22 @@ def open():
         )
     )
     if archivo is None:
-        print('No se seleccionó ningun archivo\n')
+        print('\nNo se seleccionó ningun archivo')
         return None
     else:
         texto = archivo.readlines()
         archivo.close()
-        print('Lectura exitosa\n')
+        print('\n"Lectura exitosa"')
         return texto
 
 #Purificacion de los datos
-Titles = ''
-Lista = []
-Parameters = []
-
 def purificacion():
+    lista=[]
+     
     text = open()
-    lista = []
+    
+    parametros= []
+    
     if text is not None:
         Chars = '={<">},' 
         CharAux = '={<">} ' 
@@ -45,18 +45,10 @@ def purificacion():
             temp = text[x].split(',') 
             lista.append(temp)
 
-        
         parametros = text[len(text)-1].split(',') 
-       
-        #print("\n",parametros)   
-        #print("\n",lista)  
-        #print("\n",text)
-        global Titles
-        Titles = text[0]
-        global Lista
-        Lista = lista
-        global Parameters
-        Parameters = parametros
+
+        registro(text[0],lista,parametros,text)
+
        
         
     else:
@@ -64,6 +56,4 @@ def purificacion():
 
 
 
-def Exportconsole():
-        registro(Titles,Lista,Parameters)
 
