@@ -161,7 +161,7 @@ def estudiantes(Lista,cantDatos,tipo,acces):
     if tipo.__eq__('apr'):
    
         for x in range(0,cantDatos):
-            if float(list[x][1])>61:
+            if float(list[x][1])>=61:
                 ganaron.append(list[x])
                 cantGanaron +=  1
         Reporapr(ganaron,cantGanaron,acces)

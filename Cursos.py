@@ -37,7 +37,7 @@ def listar(cantDatos,cantPara):
     Rhtml = ""
    
     for a in lista:
-         print ("--------Bienvenido--------")
+         pass
          
     #for x in range(0,cantDatos):
         #print ("Nombre:", a.Registros[x][0],"Nota:",a.Registros[x][1])

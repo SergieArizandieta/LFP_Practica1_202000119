@@ -4,8 +4,9 @@ from reportes import *
 #Menu desplegado
 def menu():
     print('1.Cargar archivo\n2.Mostrar reporte en consola\n3.Exportar reporte\n4.Salir')
-
+print("\n----------Bienvenido----------\n")
 menu()
+
 option = int(input("Ingrese una opcion: "))
 
 while option !=0:
