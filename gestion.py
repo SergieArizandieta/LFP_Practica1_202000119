@@ -11,30 +11,30 @@ Rapr =""
 Rrep =""
 
 #Gestion general
-def gestionG(Parametro,Lista,cantDatos):
+def gestionG(Parametro,Lista,cantDatos,acces):
 
     Parametro = Parametro.lower()
     if Parametro.__eq__('asc'):
-        asc(Lista,cantDatos)
+        asc(Lista,cantDatos,acces)
     elif Parametro.__eq__('desc'):
-        desc(Lista,cantDatos)
+        desc(Lista,cantDatos,acces)
     elif Parametro.__eq__('avg'):
-        avg(Lista,cantDatos)
+        avg(Lista,cantDatos,acces)
     elif Parametro.__eq__('min'):
-        min(Lista,cantDatos)
+        min(Lista,cantDatos,acces)
     elif Parametro.__eq__('max'):
-        max(Lista,cantDatos)
+        max(Lista,cantDatos,acces)
     elif Parametro.__eq__('apr'):
-        estudiantes(Lista,cantDatos,'apr')
+        estudiantes(Lista,cantDatos,'apr',acces)
     elif Parametro.__eq__('rep'):
-        estudiantes(Lista,cantDatos,'rep')
+        estudiantes(Lista,cantDatos,'rep',acces)
       
     else:
         print("\nParametro Invalido:\n")
         print("|"+Parametro+"|")
     
 #Ordena los datos ascendemente
-def asc(Lista,cantDatos):
+def asc(Lista,cantDatos,acces):
     asc = []
     for a in Lista:
        asc = a.Registros
@@ -58,10 +58,10 @@ def asc(Lista,cantDatos):
                 asc[i+1][0] = auxNombre
                 band = False
    
-    Reportasc(asc,cantDatos)
+    Reportasc(asc,cantDatos,acces)
       
 #Ordena los daros Descendentemente
-def desc(Lista,cantDatos):
+def desc(Lista,cantDatos,acces):
     desc = []
     for a in Lista:
        desc = a.Registros
@@ -82,10 +82,10 @@ def desc(Lista,cantDatos):
                 desc[i][0] = desc[i+1][0]
                 desc[i+1][0] = auxNombre
                 band = False
-    Reportdesc(desc,cantDatos)
+    Reportdesc(desc,cantDatos,acces)
 
 #Promedio de los datos
-def avg(Lista,cantDatos):
+def avg(Lista,cantDatos,acces):
     list = []
     avg = float(0)
     for a in Lista:
@@ -94,36 +94,48 @@ def avg(Lista,cantDatos):
     for x in range(0,cantDatos):
         avg = avg + float(list[x][1])
     avg = avg/ cantDatos
-    Reportavg(avg)
+    Reportavg(avg,acces)
   
 #Mayor nota
-def max(Lista,cantDatos):
+def max(Lista,cantDatos,acces):
     max = float(0)
     list = []
     nombre = ""
+    nombreHTML = ""
     for a in Lista:
        list = a.Registros
     for x in range(0,cantDatos):
         if float(list[x][1]) > max:
             max = float(list[x][1])
-            nombre = list[x][0]
-    Reportmax(max,nombre)
+            
+    for x in range(0,cantDatos):
+        if float(list[x][1]) == max:
+            nombre += (list[x][0] + "\n ")
+            nombreHTML  += (list[x][0] + "<br>")
+    Reportmax(max,nombre,nombreHTML,acces)
        
 #Menor nota
-def min(Lista,cantDatos):
+def min(Lista,cantDatos,acces):
     min = float(10000)
     list = []
     nombre = ""
+    nombreHTML=""
     for a in Lista:
        list = a.Registros
     for x in range(0,cantDatos):
         if float(list[x][1]) < min:
             min = float(list[x][1])
-            nombre = list[x][0]
-    Reportmin(min,nombre)
+            
+            
+    for x in range(0,cantDatos):
+        if float(list[x][1]) == min:
+            nombre += (list[x][0] + "\n ")
+            nombreHTML  += (list[x][0] + "<br>")
+  
+    Reportmin(min,nombre,nombreHTML,acces)
 
 #Estudiantes aprobados y desaprobados
-def estudiantes(Lista,cantDatos,tipo):
+def estudiantes(Lista,cantDatos,tipo,acces):
     list = []
     ganaron=[]
     perdieron=[]
@@ -149,20 +161,20 @@ def estudiantes(Lista,cantDatos,tipo):
     if tipo.__eq__('apr'):
    
         for x in range(0,cantDatos):
-            if float(list[x][1])>60:
+            if float(list[x][1])>61:
                 ganaron.append(list[x])
                 cantGanaron +=  1
-        Reporapr(ganaron,cantGanaron)
+        Reporapr(ganaron,cantGanaron,acces)
         
        
    
     if tipo.__eq__('rep'):        
     
         for x in range(0,cantDatos):
-            if float(list[x][1])<60:
+            if float(list[x][1])<61:
                 perdieron.append(list[x])
                 cantPerdieron +=  1
-        Reporrep(perdieron,cantPerdieron)
+        Reporrep(perdieron,cantPerdieron,acces)
         
 
        

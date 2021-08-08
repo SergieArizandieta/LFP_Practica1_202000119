@@ -1,0 +1,14 @@
+MTC_2 = {
+    < "Sergie Arizandieta" ; 65>,
+    < "Gabriela Pinelo" ; 89>,
+    < "Richard Steven" ; 36>,
+    < "Alisson Fernanda" ; 65>,
+    < "Ana Virginia" ; 99>,
+    < "Jaime Arizandieta" ; 71>,
+    < "Arizandieta" ; 65>,
+    < "Pinelo" ; 89>,
+    < "Steven" ; 36>,
+    < "Fernanda" ; 100>,
+    < "Virginia" ; 100>,
+    < "Alvarez" ; 99.5>,
+} ASC,DESC,avg,max,min,APR,rep,ASC,DESC,avg,max,min,APR,rep,ASC,DESC,avg,max,min,APR,rep

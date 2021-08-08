@@ -1,4 +1,4 @@
-MTC2 = {
+MTC_2 = {
     < "Sergie Arizandieta" ; 65>,
     < "Gabriela Pinelo" ; 89>,
     < "Richard Steven" ; 36>,
@@ -8,7 +8,7 @@ MTC2 = {
     < "Arizandieta" ; 65>,
     < "Pinelo" ; 89>,
     < "Steven" ; 36>,
-    < "Fernanda" ; 101>,
+    < "Fernanda" ; 100>,
     < "Virginia" ; 100>,
     < "Alvarez" ; 99.5>,
-} ASC,DESC,avg,max,min,APR,rep
+} ASC,DESC,avg,max,min,APR,rep,ASC,DESC,avg,max,min,APR,rep,ASC,DESC,avg,max,min,APR,rep,ASC,DESC,avg,max,min,APR,rep

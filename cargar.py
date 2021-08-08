@@ -45,9 +45,7 @@ def purificacion():
         parametros = text[len(text)-1].split(',') 
 
         registro(text[0],lista,parametros,text)
-
-       
-        
+  
     else:
         print('No se pudo analizar la entrada\n')
 
