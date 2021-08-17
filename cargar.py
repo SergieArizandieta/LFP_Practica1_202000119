@@ -1,8 +1,10 @@
 from tkinter import filedialog, Tk
 from cursos import *
+listData = []
+
 ListaNames = []
 listNotas= []
-listData = []
+
 listParametros = []
 
        
@@ -29,6 +31,12 @@ def openExtra():
 
 #Purificacion de los datos
 def purificacionExtra():
+    if listData:
+        del listData[:]
+        del ListaNames[:]
+        del listNotas[:]
+        del listParametros[:]
+
     text = openExtra()
     titulo = ""
     textTemp = ""
@@ -45,7 +53,7 @@ def purificacionExtra():
             textTemp =""
     leerParameteos(textTemp)
     #print(listData)
-    print(listParametros)
+    #print(listParametros)
 
     registro(titulo,listData,listParametros)    
 
@@ -90,7 +98,8 @@ def leerDatos(txt):
     listData.append(listaaux)
 
 def leerParameteos(txt):
-    print(txt)
+    
+    #print(txt)
     textTemp=""
     for text in txt:
         if text ==" ":
@@ -101,6 +110,8 @@ def leerParameteos(txt):
                 textTemp = ""
             else:
                 textTemp+= text
+    
+    listParametros.append(textTemp)
         
 #Antigua manera de lectura    
 #Intefaz para abrir el archivo 
