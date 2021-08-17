@@ -11,7 +11,8 @@ option = int(input("Ingrese una opcion: "))
 
 while option !=0:
     if option == 1:
-        purificacion()
+        purificacionExtra()
+        #purificacion()
     elif option == 2:
         MostrarReportsConsole()
     elif option == 3:

@@ -10,7 +10,7 @@ class Curso:
     Parametros = [] 
    
 #Registrar los datos al objeto
-def registro(title,Lista,Parametros,text):
+def registro(title,Lista,Parametros):
     if lista:
         del lista[:]
  
