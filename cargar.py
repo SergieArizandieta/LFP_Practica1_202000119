@@ -76,7 +76,7 @@ def leerDatos(txt):
     listaaux = [] 
 
     for text in txt:
-        if text == "<":
+        if text == "<" or text == "-":
             pass
         elif text == '"':
             look =True

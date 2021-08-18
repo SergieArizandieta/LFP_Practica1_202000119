@@ -1,8 +1,4 @@
-MTC_2 = {
-    < "Richard Steven" ; 12.2>,
-    < "Steven" ; 0.1>,
-    < "Fernanda" ; 60.9>,
-    < "Virginia" ; -61>,
+LENGUAJES_formales_ = {
 	< "Estudiante 01" ; 100 >,
 	<"Juan Perez" ; 50>,< "Estudiante 02";80 >,
 	<"Estudiante 03";45>,
