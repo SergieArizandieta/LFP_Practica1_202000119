@@ -1,4 +1,3 @@
-from typing import ItemsView, List
 from cursos import *
 from reportes import *
 
